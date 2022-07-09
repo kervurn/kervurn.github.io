@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Countdown! ⏳</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pyro.css" />
   </head>
   <body>
     <div class="text-container">
@@ -12,8 +13,12 @@
         <h2 id="countdown-value">calculating...</h2>
       </div>
       <div id="success" class="text-fade fade-out hidden">
-        <h1>You did it!</h1>
+        <h1 class="text-mega">You did it!</h1>
       </div>
+    </div>
+    <div id="fireworks" class="pyro inactive">
+      <div class="before"></div>
+      <div class="after"></div>
     </div>
     <script src="countdown.js"></script>
   </body>

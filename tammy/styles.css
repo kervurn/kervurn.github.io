@@ -21,6 +21,9 @@ h2 {
   padding-left: 64px;
   padding-right: 64px;
 }
+.text-mega {
+  font-size: 8rem;
+}
 .text-fade {
   -moz-transition: opacity 1s linear;
   -webkit-transition: opacity 1s linear;
