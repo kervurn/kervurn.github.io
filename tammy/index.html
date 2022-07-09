@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Countdown! ⏳</title>
+    <style>
+      body, html {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        overflow-y: hidden;
+        height: 100%;
+      }
+      h1 {
+        font-size: 4rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-container">
+      <div id="countdown">
+        <h1>Tammy's last day at Flexport is in</h1>
+        <h2 id="countdown-value">calculating...</h2>
+      </div>
+      <div id="success" style="display:none">
+        <h1>You did it!</h1>
+      </div>
+    </div>
+    <script>
+      const lastDay = new Date("Sep 2, 2022 00:00:00").getTime();
+      const clock = setInterval(function() {
+        const now = new Date().getTime();
+        const diff = lastDay - now;
+
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown-value").innerHTML = days + " days " + hours + " hours "
+        + minutes + " minutes " + seconds + " seconds";
+
+        if (diff <= 0) {
+          clearInterval(clock);
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("success").style.display = "block";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
